@@ -4,7 +4,7 @@ from views import *
 from RPi import GPIO
 
 
-GPIO.setmode(BOARD_MODE)
+GPIO.setmode(settings.BOARD_MODE)
 
 routes = [
 	(r'\/?$', index),
