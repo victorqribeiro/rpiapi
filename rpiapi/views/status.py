@@ -16,7 +16,10 @@ def status(environ, response, parameter = None):
 	
 	status = "200 OK"
 	
-	header = [("Content-Type", "application/json")]
+	header = [
+		("Content-Type", "application/json"),
+		("Cache-Control", "No-Store")
+	]
 	
 	try:
 	
