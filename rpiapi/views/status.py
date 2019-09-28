@@ -1,7 +1,6 @@
 import json
 from RPi import GPIO
 
-GPIO.setmode(GPIO.BCM)
 
 def status(environ, response, parameter = None):
 
