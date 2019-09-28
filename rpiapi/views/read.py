@@ -16,7 +16,7 @@ def read(environ, response, parameter = None):
 	
 		pin = int(parameter)
 	
-		GPIO.setup(pin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+		GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 		
 		result = GPIO.input(pin)
 	
