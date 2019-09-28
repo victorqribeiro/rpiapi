@@ -24,12 +24,7 @@ def status(environ, response, parameter = None):
 	
 	try:
 	
-		pin = int(parameter)
-	
-		result = {
-			"mode": pin_modes[ GPIO.gpio_function(pin) ],
-			"value": GPIO.input(pin)
-		}
+		result = pin_modes[ GPIO.gpio_function(int(parameter)) ]
 	
 	except Exception as e:
 
