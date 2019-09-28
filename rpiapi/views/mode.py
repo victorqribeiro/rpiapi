@@ -2,7 +2,7 @@ import json
 from RPi import GPIO
 
 
-def status(environ, response, parameter = None):
+def mode(environ, response, parameter = None):
 
 	pin_modes = {
 		1: "GPIO.IN", 

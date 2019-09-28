@@ -11,7 +11,7 @@ routes = [
 	(r'\/activate\/?([0-9]*)$', activate),
 	(r'\/deactivate\/?([0-9]*)$', deactivate),
 	(r'\/read\/?([0-9]*)$', read),
-	(r'\/status\/?([0-9]*)$', status),
+	(r'\/mode\/?([0-9]*)$', mode),
 	(r'\/toggle\/?([0-9]*)$', toggle)
 ]
 
