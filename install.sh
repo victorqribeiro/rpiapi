@@ -28,7 +28,7 @@ echo -e "Enter the new password for the user admin \n\n\n"
 # Change the password for the admin user (default: admin)
 htpasswd /var/www/rpiapi/.htpasswd admin
 
-ip=$(hostname -I) 
+ip=$(hostname -I | cut -d " " -f1) 
 
 echo "All set."
-echo "You can check the API at $ip/rpiapi"
+echo "You can check the API at http://$ip/rpiapi"
