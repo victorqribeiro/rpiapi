@@ -8,7 +8,8 @@ def activate(environ, response, parameter = None):
 	
 	header = [
 		("Content-Type", "application/json"),
-		("Cache-Control", "No-Store")
+		("Cache-Control", "no-store, no-cache, must-revalidate"),
+		("Expires", "0")
 	]
 	
 	try:
