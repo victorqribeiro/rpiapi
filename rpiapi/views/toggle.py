@@ -12,6 +12,8 @@ def toggle(environ, response, parameter = None):
 	
 		pin = int(parameter)
 		
+		GPIO.setup(pin, GPIO.OUT)
+		
 		if GPIO.input(pin):
 		
 			GPIO.output(pin, 0)

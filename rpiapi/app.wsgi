@@ -1,8 +1,9 @@
 import re
-import settings
 from views import *
 from RPi import GPIO
 
+
+GPIO.setmode(GPIO.BOARD)
 
 routes = [
 	(r'\/?$', index),
@@ -14,8 +15,6 @@ routes = [
 ]
 
 def application(environ, start_response):
-
-	GPIO.setmode(settings.BOARD_MODE)
 
 	for path, app in routes: 
 	

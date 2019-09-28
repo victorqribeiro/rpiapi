@@ -3,7 +3,7 @@
 [[ $(id -u) = "0" ]] || { echo "Please run the script as root user. sudo $0"; exit; }
 
 # Install wsgi module for Python 3 (since Python 2 will be deprecated soon)
-apt-get -y install apache2 apache2-utils libapache2-mod-wsgi-py3
+apt-get -y install python3-rpi.gpio apache2 apache2-utils libapache2-mod-wsgi-py3
 
 # Enable module wsgi
 a2enmod wsgi

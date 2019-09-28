@@ -9,8 +9,12 @@ def read(environ, response, parameter = None):
 	header = [("Content-Type", "application/json")]
 	
 	try:
+	
+		pin = int(parameter)
+	
+		GPIO.setup(pin, GPIO.IN)
 		
-		result = GPIO.input(int(parameter))
+		result = GPIO.input(pin)
 	
 	except Exception as e:
 
