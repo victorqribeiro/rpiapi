@@ -4,8 +4,6 @@ from views import *
 from RPi import GPIO
 
 
-GPIO.setmode(settings.BOARD_MODE)
-
 routes = [
 	(r'\/?$', index),
 	(r'\/activate\/?([0-9]*)$', activate),
@@ -16,6 +14,8 @@ routes = [
 ]
 
 def application(environ, start_response):
+
+	GPIO.setmode(settings.BOARD_MODE)
 
 	for path, app in routes: 
 	

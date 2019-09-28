@@ -1,6 +1,7 @@
 import json
 from RPi import GPIO
 
+
 def index(environ, response):
 
 	modes = {
