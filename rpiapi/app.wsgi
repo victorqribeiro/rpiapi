@@ -3,6 +3,7 @@ from views import *
 from RPi import GPIO
 
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
 routes = [
