@@ -1,13 +1,17 @@
 import re
+import settings
 from views import *
+from RPi import GPIO
 
+
+GPIO.setmode(BOARD_MODE)
 
 routes = [
 	(r'\/?$', index),
-	(r'\/activate\/?([0-9]*)$', status),
-	(r'\/deactivate\/?([0-9]*)$', status),
+	(r'\/activate\/?([0-9]*)$', activate),
+	(r'\/deactivate\/?([0-9]*)$', deactivate),
 	(r'\/status\/?([0-9]*)$', status),
-	(r'\/toggle\/?([0-9]*)$', status)
+	(r'\/toggle\/?([0-9]*)$', toggle)
 ]
 
 def application(environ, start_response):
