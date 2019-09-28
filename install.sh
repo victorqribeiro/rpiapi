@@ -9,7 +9,7 @@ apt-get -y install apache2 apache2-utils libapache2-mod-wsgi-py3
 a2enmod wsgi
 
 # Copy api folder to /var/www/ (don't put it under html folder, or the source code might be exposed)
-cp rpiapi /var/www/
+cp -r rpiapi/ /var/www/
 
 # Copy configuration file to apache2 directory conf-enabled
 cp rpiapi/mod-wsgi.conf /etc/apache2/conf-enabled/
