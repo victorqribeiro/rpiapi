@@ -1,5 +1,5 @@
 import re
-import .settings
+import settings
 from views import *
 from RPi import GPIO
 
