@@ -10,7 +10,7 @@ routes = [
 	(r'\/?$', index),
 	(r'\/activate\/?([0-9]*)$', activate),
 	(r'\/deactivate\/?([0-9]*)$', deactivate),
-	(r'\/read\/?([0-9]*)$', read),
+	(r'\/read\/?([0-9]*)\/?(up|down)?$', read),
 	(r'\/mode\/?([0-9]*)$', mode),
 	(r'\/toggle\/?([0-9]*)$', toggle)
 ]
@@ -25,7 +25,7 @@ def application(environ, start_response):
 		
 			if parameter.groups():
 			
-				return app(environ, start_response, parameter.group(1))
+				return app(environ, start_response, parameter.groups())
 				
 			else:
 			
