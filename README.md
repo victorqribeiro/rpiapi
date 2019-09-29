@@ -22,19 +22,19 @@ Note that I *ALWAYS* recommend reading the code of a script before running it as
 
 ## Endpoints
 
-### rpiapi/ - [GET]
+### [GET] - rpiapi/
 
 The root end point of the API will return a dictionary with the values for the GPIO.RPI_INFO, GPIO.VERSION and MODE ( GPIO.setmode() ). By Default the RPiAPI is set as [BOARD](https://raspberrypi.stackexchange.com/questions/12966/what-is-the-difference-between-board-and-bcm-for-gpio-pin-numbering).
 
-### rpiapi/activate/{pin_number} - [GET]  
+### [GET] - rpiapi/activate/{pin_number}
 
 The activate endpoint will output a - HIGH | 1 | True - value on the pin and return a **1** if **ok** or a error message.
 
-### rpiapi/deactivate/{pin_number} - [GET]  
+### [GET] - rpiapi/deactivate/{pin_number}
 
 The deactivate endpoint will output a - LOW | 0 | False - value on the pin and return a **0** if **ok** or a error message.
 
-### rpiapi/read/{pin_number}/{up|down} - [GET]  
+### [GET] - rpiapi/read/{pin_number}/{up|down}
 
 The read enpoint will set the pin as an INPUT and read the value of the pin. You can specify **up** or **down** after the pin.
 
@@ -42,7 +42,7 @@ Giving a button as example: if you want your button to read 0 when it's pressed,
 
 Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/raspberry-pi-gpio-input-pins-give-random-values).
 
-### rpiapi/mode/{pin_number} - [GET]  
+### [GET] - rpiapi/mode/{pin_number}
 
 The read endpoint will return the current **mode** of the pin of an error message. The values might be:  
 GPIO.IN,  
@@ -57,4 +57,23 @@ GPIO.UNKNOWN
 
 The toggle endpoint will toggle the pin. If it's active it will deactivate it. If it's deactive it will activate it. (if it's 0 it becomes 1, if it's 1 it becomes 0) and return the **current value** of the pin if ok or a error message.
 
+## Making requests to the RPiAPI
 
+Just navigate to http://your_raspberrypi_ip/rpiapi/ or with curl:
+```
+curl -u usernamer:password http://your_raspberrypi_ip/rpiapi/
+```
+
+## Change the password of the RPiAPI
+
+The RPiAPI uses basic HTTP authorization setted with a .htaccess and a .htpasswd so in order to create an user or change a password you'll need the htpasswd command.
+
+### Create an user
+```
+htpasswd -c /var/www/rpiapi/.htpasswd username
+```
+
+### Change the password of an existing user
+```
+htpasswd /var/www/rpiapi/.htpasswd admin
+```
