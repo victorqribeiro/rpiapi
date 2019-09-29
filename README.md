@@ -6,7 +6,7 @@ An API for your Raspberry Pi.
 
 ## About
 
-RpiAPI is a lightweight [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) [API](https://en.wikipedia.org/wiki/Application_programming_interface) built on top of the [RPi GPIO](https://pypi.org/project/RPi.GPIO/) library. It provides endpoints so you can interact with your Raspberry PI over the internet. With an API you can design your very own apps without having to worrying too much about the backend.
+RPiAPI is a lightweight [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) [API](https://en.wikipedia.org/wiki/Application_programming_interface) built on top of the [RPi GPIO](https://pypi.org/project/RPi.GPIO/) library. It provides endpoints so you can interact with your Raspberry PI over the internet. With an API you can design your very own apps without having to worrying too much about the backend.
 
 ## Installing
 
