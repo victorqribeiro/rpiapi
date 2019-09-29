@@ -14,9 +14,15 @@ def read(environ, response, parameter = None):
 	
 	try:
 	
-		pin = int(parameter)
+		pin = int(parameter[0])
+		
+		mode = GPIO.PUD_UP
+		
+		if len(parameter) > 1 and parameter[1] == "down" :
+		
+			mode = GPIO.PUD_DOWN
 	
-		GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+		GPIO.setup(pin, GPIO.IN, pull_up_down=mode)
 		
 		result = GPIO.input(pin)
 	

@@ -14,7 +14,7 @@ def deactivate(environ, response, parameter = None):
 	
 	try:
 	
-		pin = int(parameter)
+		pin = int(parameter[0])
 		
 		GPIO.setup(pin, GPIO.OUT)
 	
