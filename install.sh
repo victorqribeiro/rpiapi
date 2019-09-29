@@ -12,7 +12,7 @@ a2enmod wsgi
 cp -r rpiapi/ /var/www/
 
 # Copy configuration file to apache2 directory conf-enabled
-cp rpiapi/mod-wsgi.conf /etc/apache2/conf-enabled/
+cp rpiapi/rpiapi.conf /etc/apache2/conf-enabled/
 
 # Add user www-data to the gpio group (So that the API can access the GPIO pins)
 adduser www-data gpio
