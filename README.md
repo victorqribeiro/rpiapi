@@ -30,7 +30,7 @@ Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/
 
 ### rpiapi/mode/{pin_number} - [GET]  
 
-The read endpoint will return the current mode of the pin. The values might be:
+The read endpoint will return the current mode of the pin. The values might be:  
 GPIO.IN,  
 GPIO.OUT,  
 GPIO.SPI,  
