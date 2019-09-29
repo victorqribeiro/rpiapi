@@ -2,9 +2,23 @@
 
 An API for your Raspberry Pi.
 
+[![RPiAPI](http://img.youtube.com/vi/5tc6QrXklQ0/0.jpg)](http://www.youtube.com/watch?v=5tc6QrXklQ0)
+
 ## About
 
 RpiAPI is a lightweight [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) [API](https://en.wikipedia.org/wiki/Application_programming_interface) built on top of the [RPi GPIO](https://pypi.org/project/RPi.GPIO/) library. It provides endpoints so you can interact with your Raspberry PI over the internet. With an API you can design your very own apps without having to worrying too much about the backend.
+
+## Installing
+
+To install the RPiAPI you will need to clone it from GitHub, move the **rpiapi** folder to a place where Apache can access, enable mod-wsgi, create a wsgi configuration file for the **RPiAPI**, add the *www-data* user to the *gpio* group (so the Apache can control the pins on the raspberry pi) and set up a password on the **rpiapi** folder so only authorized people could access it.
+
+Or, you can just call
+```bash
+sudo ./installer.sh
+```
+and let the script do all that for you.
+
+Note that I *ALWAYS* recommend reading the code of a script before running it as a root user.
 
 ## Endpoints
 
@@ -14,11 +28,11 @@ The root end point of the API will return a dictionary with the values for the G
 
 ### rpiapi/activate/{pin_number} - [GET]  
 
-The activate endpoint will output a - HIGH | 1 | True - value on the pin.
+The activate endpoint will output a - HIGH | 1 | True - value on the pin and return a **1** if **ok** or a error message.
 
 ### rpiapi/deactivate/{pin_number} - [GET]  
 
-The deactivate endpoint will output a - LOW | 0 | False - value on the pin.
+The deactivate endpoint will output a - LOW | 0 | False - value on the pin and return a **0** if **ok** or a error message.
 
 ### rpiapi/read/{pin_number}/{up|down} - [GET]  
 
@@ -30,7 +44,7 @@ Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/
 
 ### rpiapi/mode/{pin_number} - [GET]  
 
-The read endpoint will return the current mode of the pin. The values might be:  
+The read endpoint will return the current **mode** of the pin of an error message. The values might be:  
 GPIO.IN,  
 GPIO.OUT,  
 GPIO.SPI,  
@@ -41,6 +55,6 @@ GPIO.UNKNOWN
 
 ### toggle/{pin_number} - [GET]  
 
-The toggle endpoint will toggle the pin. If it's active it will deactivate it. If it's deactive it will activate it. (if it's 0 it becomes 1, if it's 1 it becomes 0).
+The toggle endpoint will toggle the pin. If it's active it will deactivate it. If it's deactive it will activate it. (if it's 0 it becomes 1, if it's 1 it becomes 0) and return the **current value** of the pin if ok or a error message.
 
 
