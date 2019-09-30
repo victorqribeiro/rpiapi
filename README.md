@@ -44,7 +44,7 @@ Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/
 
 ### [GET] - rpiapi/mode/{pin_number}
 
-The mode endpoint will return the current **mode** of the pin of an error message. The values might be:  
+The mode endpoint will return the current **mode** of the pin or an error message. The values might be:  
 GPIO.IN,  
 GPIO.OUT,  
 GPIO.SPI,  
