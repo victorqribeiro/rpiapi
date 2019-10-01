@@ -34,14 +34,6 @@ The activate endpoint will output a - HIGH | 1 | True - value on the pin and ret
 
 The deactivate endpoint will output a - LOW | 0 | False - value on the pin and return a **0** if **ok** or a error message.
 
-### [GET] - rpiapi/read/{pin_number}/{up|down}
-
-The read enpoint will set the pin as an INPUT and read the value of the pin. You can specify **up** or **down** after the pin.
-
-Giving a button as example: if you want your button to read 0 when it's pressed, you should pass an **up** argument to the endpoint, so it will sustaing the pin as 1 until it's pressed.
-
-Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/raspberry-pi-gpio-input-pins-give-random-values).
-
 ### [GET] - rpiapi/mode/{pin_number}
 
 The mode endpoint will return the current **mode** of the pin or an error message. The values might be:  
@@ -52,6 +44,26 @@ The mode endpoint will return the current **mode** of the pin or an error messag
 - `GPIO.HARD_PWM`
 - `GPIO.SERIAL`
 - `GPIO.UNKNOWN`
+
+### [GET] - rpiapi/read/{pin_number}/{up|down}
+
+The read enpoint will set the pin as an INPUT and read the value of the pin. You can specify **up** or **down** after the pin.
+
+Giving a button as example: if you want your button to read 0 when it's pressed, you should pass an **up** argument to the endpoint, so it will sustaing the pin as 1 until it's pressed.
+
+Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/raspberry-pi-gpio-input-pins-give-random-values).
+
+### [GET] - rpiapi/serial/{port}
+
+The serial API opens a serial connection the the port especified on the *ports* variable on *views/serial_view.py* file. By defautl you have:
+
+```python
+ports = [
+	('/dev/ttyUSB0', 9600)
+]
+```
+
+So the port your pass on the path will be index of the ports variable. **rpiapi/serial/0** will try to open a communication to the serial deviced connected to the USB0 with the baud rate of 9600. Feel free to change this configurations.
 
 ### [GET] - toggle/{pin_number}  
 
