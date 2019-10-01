@@ -53,7 +53,7 @@ Giving a button as example: if you want your button to read 0 when it's pressed,
 
 Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/raspberry-pi-gpio-input-pins-give-random-values).
 
-### [GET] - rpiapi/serial/{port}
+### [GET] - rpiapi/serial/{port_number}
 
 The serial endpoint opens a serial connection the the port especified on the *ports* variable on *views/serial_view.py* file. 
 
