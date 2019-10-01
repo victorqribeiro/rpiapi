@@ -55,7 +55,11 @@ Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/
 
 ### [GET] - rpiapi/serial/{port}
 
-The serial API opens a serial connection the the port especified on the *ports* variable on *views/serial_view.py* file. By defautl you have:
+The serial API opens a serial connection the the port especified on the *ports* variable on *views/serial_view.py* file. 
+
+*I created this endpoint with the Arduino on mind, but it should work with other devices.*
+
+By default you have:
 
 ```python
 ports = [
@@ -63,7 +67,8 @@ ports = [
 ]
 ```
 
-So the port your pass on the path will be index of the ports variable. **rpiapi/serial/0** will try to open a communication to the serial deviced connected to the USB0 with the baud rate of 9600. Feel free to change this configurations.
+So the port your pass on the path will be index of the ports variable.  
+**rpiapi/serial/0** will try to open a communication to the serial deviced connected to the USB0 with the baud rate of 9600. Feel free to change this configurations.
 
 ### [GET] - toggle/{pin_number}  
 
