@@ -45,15 +45,15 @@ Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/
 ### [GET] - rpiapi/mode/{pin_number}
 
 The mode endpoint will return the current **mode** of the pin or an error message. The values might be:  
-GPIO.IN,  
-GPIO.OUT,  
-GPIO.SPI,  
-GPIO.I2C,  
-GPIO.HARD_PWM,  
-GPIO.SERIAL,  
-GPIO.UNKNOWN  
+- `GPIO.IN`
+- `GPIO.OUT`
+- `GPIO.SPI`
+- `GPIO.I2C`
+- `GPIO.HARD_PWM`
+- `GPIO.SERIAL`
+- `GPIO.UNKNOWN`
 
-### toggle/{pin_number} - [GET]  
+### [GET] - toggle/{pin_number}  
 
 The toggle endpoint will toggle the pin. If it's active it will deactivate it. If it's deactive it will activate it. (if it's 0 it becomes 1, if it's 1 it becomes 0) and return the **current value** of the pin if ok or a error message.
 
@@ -61,7 +61,7 @@ The toggle endpoint will toggle the pin. If it's active it will deactivate it. I
 
 Just navigate to http://your_raspberrypi_ip/rpiapi/ or with curl:
 ```
-curl -u usernamer:password http://your_raspberrypi_ip/rpiapi/
+curl -u username:password http://your_raspberrypi_ip/rpiapi/
 ```
 
 ## Change the password of the RPiAPI
