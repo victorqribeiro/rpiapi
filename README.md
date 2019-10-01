@@ -55,7 +55,7 @@ Read more about it [here](https://raspberrypi.stackexchange.com/questions/14680/
 
 ### [GET] - rpiapi/serial/{port}
 
-The serial API opens a serial connection the the port especified on the *ports* variable on *views/serial_view.py* file. 
+The serial endpoint opens a serial connection the the port especified on the *ports* variable on *views/serial_view.py* file. 
 
 *I created this endpoint with the Arduino on mind, but it should work with other devices.*
 
