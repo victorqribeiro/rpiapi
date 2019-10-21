@@ -74,6 +74,10 @@ So the port your pass on the path will be index of the ports variable.
 
 The toggle endpoint will toggle the pin. If it's active it will deactivate it. If it's deactive it will activate it. (if it's 0 it becomes 1, if it's 1 it becomes 0) and return the **current value** of the pin if ok or a error message.
 
+### [GET] - rpiapi/network
+
+Get information about network connectivity of Raspberry Pi including hostname, ip addresses and mac address.
+
 ## Making requests to the RPiAPI
 
 Just navigate to http://your_raspberrypi_ip/rpiapi/ or with curl:
