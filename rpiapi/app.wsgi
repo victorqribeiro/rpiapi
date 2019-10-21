@@ -13,7 +13,8 @@ routes = [
 	(r'\/mode\/?([0-9]*)$', mode),
 	(r'\/read\/?([0-9]*)\/?(up|down)?$', read),
 	(r'\/serial\/?([0-9]*)$', serial_view),
-	(r'\/toggle\/?([0-9]*)$', toggle)
+	(r'\/toggle\/?([0-9]*)$', toggle),
+	(r'\/network\/?$', network)
 ]
 
 def application(environ, start_response):
